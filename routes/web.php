@@ -14,14 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| be assigned to the "web" middlewa9re group. Make something great!
 |
 */
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
 Route::get('/admin/akomodasi', [\App\Http\Controllers\Admin\AccommodationController::class, 'index'])->name('adminAkomodasi');
 Route::get('/admin/tambahAkomodasi', [\App\Http\Controllers\Admin\AccommodationController::class, 'create'])->name('adminTambahAkomodasi');
 Route::post('/admin/insertAkomodasi', [\App\Http\Controllers\Admin\AccommodationController::class, 'store'])->name('adminInsertAkomodasi');
@@ -31,9 +33,12 @@ Route::post('/admin/updatedata/{id}', [\App\Http\Controllers\Admin\Accommodation
 
 Route::get('/delete/{id}', [\App\Http\Controllers\Admin\AccommodationController::class, 'destroy'])->name('delete');
 
+});
 
 Route::get('/akomodasi', [AccommodationController::class, 'index'])->name('akomodasi');
 Route::get('/destinasi', [DestinationController::class, 'index'])->name('destinasi');
 Route::get('/kuliner', [CulinaryController::class, 'index'])->name('kuliner');
 Route::get('/acara', [EventController::class, 'index'])->name('acara');
 Route::get('/rencanakanPerjalanan', [PlanTravelController::class, 'index'])->name('rencanakanPerjalanan');
+
+require __dir__."/auth.php";
