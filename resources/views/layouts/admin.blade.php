@@ -46,7 +46,15 @@
         <a href="{{ route('dashboard') }}" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <form method="POST" action="{{ route('logout') }}">
+          @csrf
+
+          <x-dropdown-link :href="route('logout')"
+                  onclick="event.preventDefault();
+                              this.closest('form').submit();" class="nav-link">
+              {{ __('Log Out') }}
+          </x-dropdown-link>
+        </form>
       </li>
     </ul>
 
@@ -196,10 +204,10 @@
   <main class="">
     @yield('footer')
     <footer class="main-footer">
-      <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+      <strong>Copyright &copy; 2023 <a href="#">Admin Wisata Kotabaru Travel Guide</a>.</strong>
       All rights reserved.
       <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 3.2.0
+        <b>Version</b> 1.0.0
       </div>
     </footer>
   </main>

@@ -9,7 +9,7 @@
       <div class="col-8">
        <div class="card">
         <div class="card-body">
-         <form action="{{ route('adminUpdateData', ['id' => $data->id]) }}" method="POST" enctype="multipart/form-data">
+         <form action="{{ route('updateAkomodasi', ['id' => $data->id]) }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="mb-3">
             <label for="title" class="form-label">Title</label>

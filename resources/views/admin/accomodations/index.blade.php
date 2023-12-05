@@ -4,7 +4,7 @@
     <h1 class="text-center mb-4">Data Akomodasi</h1>
 
     <div class="container-fluid">
-     <a href="{{ route('adminTambahAkomodasi') }}" class="btn btn-success">Tambah +</a>
+     <a href="{{ route('tambahAkomodasi') }}" class="btn btn-success">Tambah +</a>
       @if ($message = Session::get('success'))
         <div class="alert alert-success" role="alert">
           {{ $message }}
@@ -36,7 +36,7 @@
          </td>
          <td>{{ $row->created_at }}</td>
          <td>
-           <a href="{{ route('adminTampilkanData', ['id' => $row->id]) }}" class="btn btn-info">Edit</a>
+           <a href="{{ route('tampilAkomodasi', ['id' => $row->id]) }}" class="btn btn-info">Edit</a>
            <a href="{{ route('delete', ['id' => $row->id]) }}" class="btn btn-danger">Delete</a>
          </td>
        </tr>        
