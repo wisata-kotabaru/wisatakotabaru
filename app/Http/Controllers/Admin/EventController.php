@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Culinary;
+use App\Models\Event;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class CulinaryController extends Controller
+class EventController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = Culinary::all();
-        return view('admin.culinarys.index', compact('data'));
+        $data = Event::all();
+        return view('admin.events.index', compact('data'));
     }
 
     /**
@@ -22,7 +22,7 @@ class CulinaryController extends Controller
      */
     public function create()
     {
-        return view('admin.culinarys.create');
+        return view('admin.events.create');
     }
 
     /**
@@ -30,7 +30,7 @@ class CulinaryController extends Controller
      */
     public function store(Request $request)
     {
-        $data = Culinary::create($request->all());
+        $data = Event::create($request->all());
         // if($request->hasFile('foto')){
         //     $request->file('foto')->move('fotopegawai/', $request->file('foto')->getClientOriginalName());
         //     $data->foto = $request->file('foto')->getClientOriginalName();
@@ -38,12 +38,12 @@ class CulinaryController extends Controller
         // }
 
         if ($request->hasFile('foto')) {
-            $path = $request->file('foto')->store('fotoKuliner');
+            $path = $request->file('foto')->store('fotoAcara');
             $data->foto = $path;
             $data->save();
         }
 
-        return redirect()->route('adminKuliner')->with('success', 'Data berhasil di tambahkan');
+        return redirect()->route('adminAcara')->with('success', 'Data berhasil di tambahkan');
         // dd($data);
     }
 
@@ -52,9 +52,9 @@ class CulinaryController extends Controller
      */
     public function show($id)
     {
-        $data = Culinary::find($id);
+        $data = Event::find($id);
 
-        return view('admin.culinarys.edit', compact('data'));
+        return view('admin.events.edit', compact('data'));
     }
 
     /**
@@ -70,10 +70,10 @@ class CulinaryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = Culinary::find($id);
+        $data = Event::find($id);
         $data->update($request->all());
 
-        return redirect()->route('adminKuliner')->with('success', 'Data berhasil di update');
+        return redirect()->route('adminAcara')->with('success', 'Data berhasil di update');
     }
 
     /**
@@ -81,9 +81,9 @@ class CulinaryController extends Controller
      */
     public function destroy($id)
     {
-        $data = Culinary::find($id);
+        $data = Event::find($id);
         $data->delete();
 
-        return redirect()->route('adminKuliner')->with('success', 'Data berhasil di delete');
+        return redirect()->route('adminAcara')->with('success', 'Data berhasil di delete');
     }
 }

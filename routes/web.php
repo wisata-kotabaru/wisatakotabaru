@@ -29,6 +29,14 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
     Route::get('/kuliner/{id}', [\App\Http\Controllers\Admin\CulinaryController::class, 'show'])->name('tampilKuliner');
     Route::post('/updateKuliner/{id}', [\App\Http\Controllers\Admin\CulinaryController::class, 'update'])->name('updateKuliner');
     Route::get('/delete/{id}', [\App\Http\Controllers\Admin\CulinaryController::class, 'destroy'])->name('delete');
+
+    // Route Admin Acara
+    Route::get('/acara', [\App\Http\Controllers\Admin\EventController::class, 'index'])->name('adminAcara');
+    Route::get('/tambahAcara', [\App\Http\Controllers\Admin\EventController::class, 'create'])->name('tambahAcara');
+    Route::post('/insertAcara', [\App\Http\Controllers\Admin\EventController::class, 'store'])->name('insertAcara');
+    Route::get('/acara/{id}', [\App\Http\Controllers\Admin\EventController::class, 'show'])->name('tampilAcara');
+    Route::post('/updateAcara/{id}', [\App\Http\Controllers\Admin\EventController::class, 'update'])->name('updateAcara');
+    Route::get('/delete/{id}', [\App\Http\Controllers\Admin\EventController::class, 'destroy'])->name('delete');
 });
 
 
