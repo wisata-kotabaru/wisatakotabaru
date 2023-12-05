@@ -101,7 +101,7 @@
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
       <img src="{{ asset('frontend/img/wonderlandKotabaru.png') }}" alt="AdminLTE Logo" class="brand-image img-fluid" style="opacity: .8">
-      <span class="brand-text font-weight-light">Admin Wisata Kotabaru</span>
+      <span class="brand-text font-weight-light">WisataKotabaru</span>
     </a>
 
     <!-- Sidebar -->
@@ -142,6 +142,12 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ route('adminDestinasi') }}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Destinasi</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="{{ route('adminAkomodasi') }}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>

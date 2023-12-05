@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1 class="text-center mb-4">Tambah Data Kuliner</h1>
+    <h1 class="text-center mb-4">Tambah Data Destinasi</h1>
 
 
     <div class="container-fluid">
@@ -9,7 +9,7 @@
       <div class="col-8">
        <div class="card">
         <div class="card-body">
-         <form action="{{ route('insertKuliner') }}" method="POST" enctype="multipart/form-data">
+         <form action="{{ route('insertDestinasi') }}" method="POST" enctype="multipart/form-data">
          <form action="#" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="mb-3">
