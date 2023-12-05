@@ -12,15 +12,23 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::middleware(['auth'])->prefix('admin')->group(function(){
+
+    // Route Admin Akomodasi
     Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
     Route::get('/akomodasi', [\App\Http\Controllers\Admin\AccommodationController::class, 'index'])->name('adminAkomodasi');
     Route::get('/tambahAkomodasi', [\App\Http\Controllers\Admin\AccommodationController::class, 'create'])->name('tambahAkomodasi');
     Route::post('/insertAkomodasi', [\App\Http\Controllers\Admin\AccommodationController::class, 'store'])->name('insertAkomodasi');
-
-    Route::get('/tampilkandata/{id}', [\App\Http\Controllers\Admin\AccommodationController::class, 'show'])->name('tampilAkomodasi');
-    Route::post('/updatedata/{id}', [\App\Http\Controllers\Admin\AccommodationController::class, 'update'])->name('updateAkomodasi');
-
+    Route::get('/akomodasi/{id}', [\App\Http\Controllers\Admin\AccommodationController::class, 'show'])->name('tampilAkomodasi');
+    Route::post('/updateAkomodasi/{id}', [\App\Http\Controllers\Admin\AccommodationController::class, 'update'])->name('updateAkomodasi');
     Route::get('/delete/{id}', [\App\Http\Controllers\Admin\AccommodationController::class, 'destroy'])->name('delete');
+
+    // Route Admin Kuliner
+    Route::get('/kuliner', [\App\Http\Controllers\Admin\CulinaryController::class, 'index'])->name('adminKuliner');
+    Route::get('/tambahKuliner', [\App\Http\Controllers\Admin\CulinaryController::class, 'create'])->name('tambahKuliner');
+    Route::post('/insertKuliner', [\App\Http\Controllers\Admin\CulinaryController::class, 'store'])->name('insertKuliner');
+    Route::get('/kuliner/{id}', [\App\Http\Controllers\Admin\CulinaryController::class, 'show'])->name('tampilKuliner');
+    Route::post('/updateKuliner/{id}', [\App\Http\Controllers\Admin\CulinaryController::class, 'update'])->name('updateKuliner');
+    Route::get('/delete/{id}', [\App\Http\Controllers\Admin\CulinaryController::class, 'destroy'])->name('delete');
 });
 
 
