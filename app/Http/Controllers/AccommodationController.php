@@ -65,4 +65,8 @@ class AccommodationController extends Controller
     {
         //
     }
+
+    public function detailAkomodasi(){
+        return view('frontend.akomodasi.detailAkomodasi');
+    }
 }

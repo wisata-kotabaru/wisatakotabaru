@@ -48,10 +48,13 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
 });
 
 
-Route::get('/akomodasi', [AccommodationController::class, 'index'])->name('akomodasi');
 Route::get('/destinasi', [DestinationController::class, 'index'])->name('destinasi');
 Route::get('/kuliner', [CulinaryController::class, 'index'])->name('kuliner');
 Route::get('/acara', [EventController::class, 'index'])->name('acara');
 Route::get('/rencanakanPerjalanan', [PlanTravelController::class, 'index'])->name('rencanakanPerjalanan');
+
+// Akomodasi
+Route::get('/akomodasi', [AccommodationController::class, 'index'])->name('akomodasi');
+Route::get('/detailAkomodasi', [AccommodationController::class, 'detailAkomodasi'])->name('detailAkomdoasi');
 
 require __dir__."/auth.php";

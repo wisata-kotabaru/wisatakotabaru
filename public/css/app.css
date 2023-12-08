@@ -9,10 +9,30 @@
 }
 
 /* Tambahkan di CSS Anda */
-.card {
-    transition: transform 0.3s ease-in-out; /* Efek transisi */
+/* .card {
+    transition: transform 0.3s ease-in-out;
 }
 
 .card:hover {
-    transform: scale(1.05); /* Perbesar elemen saat dihover */
+    transform: scale(1.05);
+} */
+
+.custom-link {
+    text-decoration: none;
+    color: black;
+}
+
+html,
+body {
+    height: 50%;
+    margin: 0;
+}
+
+.bg-warning {
+    min-height: 100%;
+    position: relative;
+}
+
+main {
+    flex: 1;
 }
