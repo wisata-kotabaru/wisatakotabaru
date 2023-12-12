@@ -32,6 +32,7 @@
          <td>{{ $row->lokasi }}</td>
          <td>
           <img src="{{ asset($row->foto) }}" alt="foto" width="50px">
+          <img src="{{ \Storage::url($row->foto) }}" alt="foto" width="50px">
           {{-- {{ $row->foto }} --}}
          </td>
          <td>{{ $row->created_at }}</td>

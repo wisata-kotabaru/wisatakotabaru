@@ -48,13 +48,23 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
 });
 
 
-Route::get('/destinasi', [DestinationController::class, 'index'])->name('destinasi');
-Route::get('/kuliner', [CulinaryController::class, 'index'])->name('kuliner');
-Route::get('/acara', [EventController::class, 'index'])->name('acara');
-Route::get('/rencanakanPerjalanan', [PlanTravelController::class, 'index'])->name('rencanakanPerjalanan');
+
+
+
 
 // Akomodasi
 Route::get('/akomodasi', [AccommodationController::class, 'index'])->name('akomodasi');
 Route::get('/detailAkomodasi', [AccommodationController::class, 'detailAkomodasi'])->name('detailAkomdoasi');
 
+// Destinasi
+Route::get('/destinasi', [DestinationController::class, 'index'])->name('destinasi');
+Route::get('/detailDestinasi', [DestinationController::class, 'detailDestinasi'])->name('detailDestinasi');
+
+// Kuliner
+Route::get('/kuliner', [CulinaryController::class, 'index'])->name('kuliner');
+Route::get('/detailKuliner', [CulinaryController::class, 'detailKuliner'])->name('detailKuliner');
+
+// Acara
+Route::get('/acara', [EventController::class, 'index'])->name('acara');
+Route::get('/detailAcara', [EventController::class, 'detailAcara'])->name('detailAcara');
 require __dir__."/auth.php";

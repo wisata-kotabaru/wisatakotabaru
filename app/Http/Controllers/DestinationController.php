@@ -62,4 +62,8 @@ class DestinationController extends Controller
     {
         //
     }
+
+    public function detailDestinasi(){
+        return view('frontend.destinasi.detailDestinasi');
+    }
 }

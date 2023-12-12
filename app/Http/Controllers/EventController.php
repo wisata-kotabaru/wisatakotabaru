@@ -62,4 +62,8 @@ class EventController extends Controller
     {
         //
     }
+
+    public function detailAcara(){
+        return view('frontend.acara.detailAcara');
+    }
 }

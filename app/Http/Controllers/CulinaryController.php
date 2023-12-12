@@ -62,4 +62,9 @@ class CulinaryController extends Controller
     {
         //
     }
+
+    public function detailKuliner()
+    {
+        return view('frontend.kuliner.detailKuliner');
+    }
 }

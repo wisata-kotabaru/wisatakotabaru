@@ -47,9 +47,9 @@
             <a class="nav-link" href="{{ route('panduan') }}">{{ __('Panduan') }}</a>
           </li>            
           @endif
-          @if (Route::has('rencanakanPerjalanan'))
+          @if (Route::has('#'))
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('rencanakanPerjalanan') }}">{{ __('Referensi Perjalanan') }}</a>
+            <a class="nav-link" href="{{ route('#') }}">{{ __('Peta Digital') }}</a>
           </li>            
           @endif
         </ul>
