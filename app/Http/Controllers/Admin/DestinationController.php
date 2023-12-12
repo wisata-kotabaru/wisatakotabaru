@@ -38,7 +38,7 @@ class DestinationController extends Controller
         // }
 
         if ($request->hasFile('foto')) {
-            $path = $request->file('foto')->store('fotoDestinasi');
+            $path = $request->file('foto')->store('public/fotoDestinasi');
             $data->foto = $path;
             $data->save();
         }
