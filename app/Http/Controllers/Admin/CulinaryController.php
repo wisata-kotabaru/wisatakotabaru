@@ -31,15 +31,9 @@ class CulinaryController extends Controller
     public function store(Request $request)
     {
         $data = Culinary::create($request->all());
-        // if($request->hasFile('foto')){
-        //     $request->file('foto')->move('fotopegawai/', $request->file('foto')->getClientOriginalName());
-        //     $data->foto = $request->file('foto')->getClientOriginalName();
-        //     $data->save();
-        // }
 
         if ($request->hasFile('foto')) {
-            $path = $request->file('foto')->store('fotoKuliner');
-            $data->foto = $path;
+            $data->foto = $request->file('foto')->store('public/fotoKuliner');
             $data->save();
         }
 

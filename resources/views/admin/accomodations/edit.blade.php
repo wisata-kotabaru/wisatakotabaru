@@ -21,7 +21,7 @@
           </div>
           <div class="mb-3">
             <label for="foto" class="form-label">Foto</label>
-            <input type="file" class="form-control" name="foto" id="foto" aria-describedby="emailHelp" value="{{ $data->foto }}">
+            <input type="file" class="form-control" name="foto" id="foto" aria-describedby="emailHelp" value="{{ \Storage::url($data->foto) }}">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
 

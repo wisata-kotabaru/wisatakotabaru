@@ -38,7 +38,7 @@
          <td>{{ $row->created_at }}</td>
          <td>
            <a href="{{ route('tampilDestinasi', ['id' => $row->id]) }}" class="btn btn-info">Edit</a>
-           <a href="{{ route('delete', ['id' => $row->id]) }}" class="btn btn-danger">Delete</a>
+           <a href="{{ route('deleteDestinasi', ['id' => $row->id]) }}" class="btn btn-danger">Delete</a>
          </td>
        </tr>        
        @endforeach

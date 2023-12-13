@@ -20,7 +20,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
     Route::post('/insertAkomodasi', [\App\Http\Controllers\Admin\AccommodationController::class, 'store'])->name('insertAkomodasi');
     Route::get('/akomodasi/{id}', [\App\Http\Controllers\Admin\AccommodationController::class, 'show'])->name('tampilAkomodasi');
     Route::post('/updateAkomodasi/{id}', [\App\Http\Controllers\Admin\AccommodationController::class, 'update'])->name('updateAkomodasi');
-    Route::get('/delete/{id}', [\App\Http\Controllers\Admin\AccommodationController::class, 'destroy'])->name('delete');
+    Route::get('/deleteAkomodasi/{id}', [\App\Http\Controllers\Admin\AccommodationController::class, 'destroy'])->name('deleteAkomodasi');
 
     // Route Admin Kuliner
     Route::get('/kuliner', [\App\Http\Controllers\Admin\CulinaryController::class, 'index'])->name('adminKuliner');
@@ -28,7 +28,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
     Route::post('/insertKuliner', [\App\Http\Controllers\Admin\CulinaryController::class, 'store'])->name('insertKuliner');
     Route::get('/kuliner/{id}', [\App\Http\Controllers\Admin\CulinaryController::class, 'show'])->name('tampilKuliner');
     Route::post('/updateKuliner/{id}', [\App\Http\Controllers\Admin\CulinaryController::class, 'update'])->name('updateKuliner');
-    Route::get('/delete/{id}', [\App\Http\Controllers\Admin\CulinaryController::class, 'destroy'])->name('delete');
+    Route::get('/deleteKuliner/{id}', [\App\Http\Controllers\Admin\CulinaryController::class, 'destroy'])->name('deleteKuliner');
 
     // Route Admin Acara
     Route::get('/acara', [\App\Http\Controllers\Admin\EventController::class, 'index'])->name('adminAcara');
@@ -36,7 +36,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
     Route::post('/insertAcara', [\App\Http\Controllers\Admin\EventController::class, 'store'])->name('insertAcara');
     Route::get('/acara/{id}', [\App\Http\Controllers\Admin\EventController::class, 'show'])->name('tampilAcara');
     Route::post('/updateAcara/{id}', [\App\Http\Controllers\Admin\EventController::class, 'update'])->name('updateAcara');
-    Route::get('/delete/{id}', [\App\Http\Controllers\Admin\EventController::class, 'destroy'])->name('delete');
+    Route::get('/deleteAcara/{id}', [\App\Http\Controllers\Admin\EventController::class, 'destroy'])->name('deleteAcara');
 
     // Route Admin Destinasi
     Route::get('/destinasi', [\App\Http\Controllers\Admin\DestinationController::class, 'index'])->name('adminDestinasi');
@@ -44,7 +44,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
     Route::post('/insertDestinasi', [\App\Http\Controllers\Admin\DestinationController::class, 'store'])->name('insertDestinasi');
     Route::get('/destinasi/{id}', [\App\Http\Controllers\Admin\DestinationController::class, 'show'])->name('tampilDestinasi');
     Route::post('/updateDestinasi/{id}', [\App\Http\Controllers\Admin\DestinationController::class, 'update'])->name('updateDestinasi');
-    Route::get('/delete/{id}', [\App\Http\Controllers\Admin\DestinationController::class, 'destroy'])->name('delete');
+    Route::get('/deleteDestinasi/{id}', [\App\Http\Controllers\Admin\DestinationController::class, 'destroy'])->name('deleteDestinasi');
 });
 
 
@@ -54,7 +54,8 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
 
 // Akomodasi
 Route::get('/akomodasi', [AccommodationController::class, 'index'])->name('akomodasi');
-Route::get('/detailAkomodasi', [AccommodationController::class, 'detailAkomodasi'])->name('detailAkomdoasi');
+Route::get('/detailAkomodasi/{id}', [AccommodationController::class, 'detailAkomodasi'])->name('detailAkomodasi');
+// Route::get('/detailAkomodasi', [AccommodationController::class, 'detailAkomodasi'])->name('detailAkomdoasi');
 
 // Destinasi
 Route::get('/destinasi', [DestinationController::class, 'index'])->name('destinasi');

@@ -15,17 +15,17 @@
 
 <div class="card container mt-5">
   <div class="card-header">
-    <h1 class="text-center mt-5">Hotel Grand Surya</h1>
+    <h1 class="text-center mt-5">{{ $data->title }}</h1>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb justify-content-center">
         <li class="breadcrumb-item"><a href="#" class="link-dark">Home</a></li>
-        <li class="breadcrumb-item"><a href="#" class="link-dark">Library</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Hotel Grand Surya</li>
+        <li class="breadcrumb-item"><a href="{{ route('akomodasi') }}" class="link-dark">Akomodasi</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ $data->title }}</li>
       </ol>
     </nav>
   </div>
   <div class="card-body">
-    <img src="{{ asset("frontend/img/carrousel_new.png") }}" class="card-img-top" alt="...">
+    <img src="{{ \Storage::url($data->foto) }}" class="card-img-top" alt="...">
 
     <div class="row justify-content-center">
       <div class="col-md-3">
@@ -51,7 +51,7 @@
     
   </div>
 </div>
-
+{{-- 
 <div class="container border mt-5 py-4 ">
 
  <div class="card-header">
@@ -74,6 +74,7 @@
      </div>
    </div>
   </div>
+
   <div class="card mb-3 mx-2 border" style="max-width: 540px;">
    <div class="row g-0">
      <div class="col-md-4">
@@ -88,6 +89,7 @@
      </div>
    </div>
   </div>
+
   <div class="card mb-3 mx-2 border" style="max-width: 540px;">
    <div class="row g-0">
      <div class="col-md-4">
@@ -104,7 +106,7 @@
   </div>
 
  </div>
-</div>
+</div> --}}
 
 
 @endsection

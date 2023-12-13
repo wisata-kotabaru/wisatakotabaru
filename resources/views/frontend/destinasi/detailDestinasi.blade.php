@@ -51,7 +51,7 @@
     
   </div>
 </div>
-
+{{-- 
 <div class="container border mt-5 py-4 ">
 
  <div class="card-header">
@@ -104,7 +104,7 @@
   </div>
 
  </div>
-</div>
+</div> --}}
 
 
 @endsection

@@ -31,13 +31,12 @@
          <td>{{ $row->title }}</td>
          <td>{{ $row->lokasi }}</td>
          <td>
-          <img src="{{ asset($row->foto) }}" alt="foto" width="50px">
-          {{-- {{ $row->foto }} --}}
+          <img src="{{ \Storage::url($row->foto) }}" alt="foto" width="50px">
          </td>
          <td>{{ $row->created_at }}</td>
          <td>
            <a href="{{ route('tampilAkomodasi', ['id' => $row->id]) }}" class="btn btn-info">Edit</a>
-           <a href="{{ route('delete', ['id' => $row->id]) }}" class="btn btn-danger">Delete</a>
+           <a href="{{ route('deleteAkomodasi', ['id' => $row->id]) }}" class="btn btn-danger">Delete</a>
          </td>
        </tr>        
        @endforeach

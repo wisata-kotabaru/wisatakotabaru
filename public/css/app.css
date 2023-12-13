@@ -36,3 +36,8 @@ body {
 main {
     flex: 1;
 }
+
+.custom-card-img {
+    height: 200px; /* Set your desired height */
+    object-fit: cover; /* This property ensures that the image covers the entire container, preserving its aspect ratio */
+}

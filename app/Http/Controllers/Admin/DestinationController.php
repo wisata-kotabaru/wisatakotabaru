@@ -31,15 +31,9 @@ class DestinationController extends Controller
     public function store(Request $request)
     {
         $data = Destination::create($request->all());
-        // if($request->hasFile('foto')){
-        //     $request->file('foto')->move('fotopegawai/', $request->file('foto')->getClientOriginalName());
-        //     $data->foto = $request->file('foto')->getClientOriginalName();
-        //     $data->save();
-        // }
 
         if ($request->hasFile('foto')) {
-            $path = $request->file('foto')->store('public/fotoDestinasi');
-            $data->foto = $path;
+            $data->foto = $request->file('foto')->store('public/fotoDestinasi');
             $data->save();
         }
 

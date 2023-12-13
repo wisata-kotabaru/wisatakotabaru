@@ -13,8 +13,8 @@ class AccommodationController extends Controller
      */
     public function index()
     {
-        // $data = Accommodation::all();
-        return view('frontend.akomodasi.akomodasi');
+        $data = Accommodation::all();
+        return view('frontend.akomodasi.akomodasi', compact('data'));
         // dd($data);
     }
 
@@ -66,7 +66,14 @@ class AccommodationController extends Controller
         //
     }
 
-    public function detailAkomodasi(){
-        return view('frontend.akomodasi.detailAkomodasi');
+    public function detailAkomodasi($id){
+        // $data = Accommodation::all();
+        // return view('frontend.akomodasi.detailAkomodasi', compact('data'));
+
+        $data = Accommodation::find($id); 
+        return view('frontend.akomodasi.detailAkomodasi', ['data' => $data]);
+
+        // $data = Accommodation::find($id);
+        // return view('frontend.akomodasi.detailAkomodasi', compact('data'));
     }
 }

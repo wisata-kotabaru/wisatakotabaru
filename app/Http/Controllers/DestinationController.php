@@ -12,7 +12,8 @@ class DestinationController extends Controller
      */
     public function index()
     {
-        return view('frontend.destinasi.destinasi');
+        $data = Destination::all();
+        return view('frontend.destinasi.destinasi', compact('data'));
     }
 
     /**

@@ -12,7 +12,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        return view('frontend.acara.acara');
+        $data = Event::all();
+        return view('frontend.acara.acara', compact('data'));
     }
 
     /**
