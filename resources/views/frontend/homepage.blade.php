@@ -97,15 +97,16 @@
      </div>
   </div>
 
+
   <main class="bg-warning">
+    @yield('footer')
 
     <div class="container">
-      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 py-5 my-5 border-top">
+      <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 py-5 my-5 border-top d-flex justify-content-center">
         <div class="col mb-3">
-          <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
-            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-          </a>
-          <p class="text-muted">© 2021</p>
+          <img src="{{ asset('frontend/img/tagline.png') }}" alt="" width="120" height="56" class="img-fluid mb-3">
+          <img src="{{ asset('frontend/img/wonderlandKotabaru.png') }}" alt="" width="130" height="66" class="img-fluid">
+          {{-- <p class="text-muted">© 2021</p> --}}
         </div>
     
         <div class="col mb-3">
@@ -113,40 +114,45 @@
         </div>
     
         <div class="col mb-3">
-          <h5>Testing</h5>
+          <h5>Hubungi Kami</h5>
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Jl. Suryagandamana No.71, 
+              Kotabaru Tengah, 
+              Kec. Pulau Laut Utara, 
+              Kab. Kotabaru, 
+              Kalimantan Selatan 72111</a></li>
+
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">disparpora@kotabaru.go.id</a></li>
           </ul>
         </div>
     
         <div class="col mb-3">
-          <h5>Section</h5>
+          <h5>Legal</h5>
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Syarat & Ketentuan</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Privacy Policy</a></li>
           </ul>
         </div>
     
         <div class="col mb-3">
-          <h5>Section</h5>
-          <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-          </ul>
+          <form>
+            <h5>Buletin</h5>
+            {{-- <p>Monthly digest of what's new and exciting from us.</p> --}}
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Email address</label>
+              <input id="newsletter1" type="text" class="form-control mb-2" placeholder="Email address">
+            </div>
+            <button class="btn btn-dark form-control" type="button">Subscribe</button>
+          </form>
         </div>
+
+        
       </footer>
+
+      
     </div>
   </main>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>

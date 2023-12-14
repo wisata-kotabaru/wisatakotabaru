@@ -61,11 +61,11 @@ Route::get('/detailAkomodasi/{id}', [AccommodationController::class, 'detailAkom
 
 // Destinasi
 Route::get('/destinasi', [DestinationController::class, 'index'])->name('destinasi');
-Route::get('/detailDestinasi', [DestinationController::class, 'detailDestinasi'])->name('detailDestinasi');
+Route::get('/detailDestinasi/{id}', [DestinationController::class, 'detailDestinasi'])->name('detailDestinasi');
 
 // Kuliner
 Route::get('/kuliner', [CulinaryController::class, 'index'])->name('kuliner');
-Route::get('/detailKuliner', [CulinaryController::class, 'detailKuliner'])->name('detailKuliner');
+Route::get('/detailKuliner/{id}', [CulinaryController::class, 'detailKuliner'])->name('detailKuliner');
 
 // Acara
 Route::get('/acara', [EventController::class, 'index'])->name('acara');

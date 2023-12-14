@@ -3,13 +3,7 @@
 @section('content')
 <div class="carousel-inner">
  <div class="carousel-item active">
-   <img src="{{ asset('frontend/img/carrousel.png') }}" class="d-block w-100" alt="...">
-   <div class="carousel-caption d-none d-md-block">
-    <div class="caption-content">
-     <h5>First slide label</h5>
-     <p>Some representative placeholder content for the first slide.</p>
-    </div>
-  </div>
+   <img src="{{ \Storage::url($data->foto) }}" class="d-block w-100 custom-card-img" alt="...">
   </div>
 </div>
 
@@ -24,31 +18,13 @@
       </ol>
     </nav>
   </div>
+
   <div class="card-body">
-    <img src="{{ asset("frontend/img/carrousel_new.png") }}" class="card-img-top" alt="...">
+    <img src="{{ \Storage::url($data->foto) }}" class="card-img-top" alt="...">
+  </div>
 
-    <div class="row justify-content-center">
-      <div class="col-md-3">
-        <blockquote class="blockquote mb-0">
-          <p>A well-known quote</p>
-        </blockquote>
-      </div>
-      <div class="col-md-3">
-        <blockquote class="blockquote mb-0">
-          <p>A well-known quote</p>
-        </blockquote>
-      </div>
-      <div class="col-md-3">
-        <blockquote class="blockquote mb-0">
-          <p>A well-known quote</p>
-        </blockquote>
-      </div>
-    </div>
-
-    <div class="d-flex" style="height: 200px;">
-      <div class="hr"></div>
-    </div>
-    
+  <div class="card-header">
+    <p>{{ $data->kontenKuliner }}</p>
   </div>
 </div>
 {{-- 

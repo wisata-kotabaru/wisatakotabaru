@@ -12,7 +12,7 @@ class CulinaryController extends Controller
      */
     public function index()
     {
-        $data = Culinary::all();
+        $data = Culinary::paginate(4);
         return view('frontend.kuliner.kuliner', compact('data'));
     }
 

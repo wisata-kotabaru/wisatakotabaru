@@ -1,8 +1,8 @@
 /* Tambahkan di CSS Anda */
-.carousel-caption {
-    opacity: 0; /* Awalnya elemen tersembunyi */
-    transition: opacity 0.5s ease-in-out; /* Efek transisi */
-}
+/* .carousel-caption {
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; 
+} */
 
 .carousel-item:hover .carousel-caption {
     opacity: 1; /* Menampilkan elemen saat dihover */
@@ -43,4 +43,20 @@ body {
 
 main {
     flex: 1;
+}
+
+/* Custom Paginate Link Dark */
+/* Di dalam file CSS kustom Anda */
+.dark-theme {
+    background-color: #343a40; /* Warna latar belakang */
+    color: #ffffff; /* Warna teks */
+}
+
+.dark-theme:hover {
+    background-color: #2c3136; /* Warna latar belakang saat dihover */
+}
+
+.dark-theme.active {
+    background-color: #1e2124; /* Warna latar belakang saat aktif */
+    border-color: #1e2124; /* Warna border saat aktif */
 }

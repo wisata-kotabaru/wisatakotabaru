@@ -13,7 +13,7 @@ class AccommodationController extends Controller
      */
     public function index()
     {
-        $data = Accommodation::all();
+        $data = Accommodation::paginate(4);
         return view('frontend.akomodasi.akomodasi', compact('data'));
         // dd($data);
     }

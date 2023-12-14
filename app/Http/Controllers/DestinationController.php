@@ -12,7 +12,7 @@ class DestinationController extends Controller
      */
     public function index()
     {
-        $data = Destination::all();
+        $data = Destination::paginate(4);
         return view('frontend.destinasi.destinasi', compact('data'));
     }
 

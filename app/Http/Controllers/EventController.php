@@ -12,7 +12,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $data = Event::all();
+        $data = Event::paginate(4);
         return view('frontend.acara.acara', compact('data'));
     }
 
