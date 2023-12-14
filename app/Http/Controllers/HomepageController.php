@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Culinary;
 use Illuminate\Http\Request;
 
-class CulinaryController extends Controller
+class HomepageController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = Culinary::all();
-        return view('frontend.kuliner.kuliner', compact('data'));
+        return view('frontend.homepage');
     }
 
     /**
@@ -35,7 +33,7 @@ class CulinaryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Culinary $culinary)
+    public function show(string $id)
     {
         //
     }
@@ -43,7 +41,7 @@ class CulinaryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Culinary $culinary)
+    public function edit(string $id)
     {
         //
     }
@@ -51,7 +49,7 @@ class CulinaryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Culinary $culinary)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -59,13 +57,8 @@ class CulinaryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Culinary $culinary)
+    public function destroy(string $id)
     {
         //
-    }
-
-    public function detailKuliner()
-    {
-        return view('frontend.kuliner.detailKuliner');
     }
 }

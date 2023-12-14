@@ -57,7 +57,7 @@
  
 
 
- <div class="card-group container py-4">
+<div class="card-group container py-4">
   @foreach ($data as $row)
   <div class="col-md-3 mb-4">
     <div class="card mx-2 shadow rounded">

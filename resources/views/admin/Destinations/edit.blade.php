@@ -23,6 +23,10 @@
             <label for="foto" class="form-label">Foto</label>
             <input type="file" class="form-control" name="foto" id="foto" aria-describedby="emailHelp" value="{{ $data->foto }}">
           </div>
+          <div class="mb-3">
+            <label for="kontenDestinasi" class="form-label">Deskripsi</label>
+            <textarea class="form-control" id="kontenDestinasi" name="kontenDestinasi" rows="3" value="{{ $data->kontenDestinasi }}"></textarea>
+          </div>
           <button type="submit" class="btn btn-primary">Submit</button>
 
         </form>

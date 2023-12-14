@@ -4,6 +4,7 @@ use App\Http\Controllers\AccommodationController;
 use App\Http\Controllers\CulinaryController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\PlanTravelController;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +52,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
 
 
 
+Route::get('/homepage', [HomepageController::class, 'index'])->name('homepage');
 
 // Akomodasi
 Route::get('/akomodasi', [AccommodationController::class, 'index'])->name('akomodasi');

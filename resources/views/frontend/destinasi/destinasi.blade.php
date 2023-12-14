@@ -13,16 +13,18 @@
     </div>
  </div>
 
- <div class="card-group container py-4">
-   @foreach ($data as $row)
-  <div class="card mx-2 shadow">
-    <img src="{{ \Storage::url($row->foto) }}" class="card-img-top custom-card-img" alt="...">
-    <div class="card-body">
-      <h6 class="card-title text-warning">{{ $row->created_at }}</h6>
-      <h4 class="card-title">{{ $row->title }}</h4>
-      <p class="card-text">{{ $row->lokasi }}</p>
-      <a class="btn btn-dark" href="{{ route('detailDestinasi') }}" role="button">SELENGKAPNYA</a>
-    </div>
+<div class="card-group container py-4">
+  @foreach ($data as $row)
+  <div class="col-md-3 mb-4">
+    <div class="card mx-2 shadow rounded">
+      <img src="{{ \Storage::url($row->foto) }}" class="card-img-top custom-card-img rounded" alt="...">
+      <div class="card-body">
+        <h6 class="card-title text-warning">{{ $row->created_at }}</h6>
+        <h4 class="card-title">{{ $row->title }}</h4>
+        <p class="card-text">{{ $row->lokasi }}</p>
+      </div>
+      <a class="btn btn-dark" href="{{ route('detailAkomodasi', ['id' => $row->id]) }}" role="button">SELENGKAPNYA</a>
+    </div>    
   </div>
   @endforeach
 </div>

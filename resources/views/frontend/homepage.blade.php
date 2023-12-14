@@ -12,7 +12,7 @@
   </head>
   <body>
 
-   <nav class="navbar navbar-expand-lg fixed-top bg-light">
+   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="{{ route('homepage') }}">
        <img src="{{ asset('frontend/img/wonderlandKotabaru.png') }}" alt="Bootstrap" width="120" height="56" class="img-fluid">
@@ -24,49 +24,80 @@
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           @if (Route::has('destinasi'))
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('destinasi') }}">{{ __('Destinasi') }}</a>
+            <a class="nav-link text-white" href="{{ route('destinasi') }}">{{ __('Destinasi') }}</a>
           </li>            
           @endif
           @if (Route::has('akomodasi'))
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('akomodasi') }}">{{ __('Akomodasi') }}</a>
+            <a class="nav-link text-white" href="{{ route('akomodasi') }}">{{ __('Akomodasi') }}</a>
           </li>            
           @endif
           @if (Route::has('kuliner'))
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('kuliner') }}">{{ __('Kuliner') }}</a>
+            <a class="nav-link text-white" href="{{ route('kuliner') }}">{{ __('Kuliner') }}</a>
           </li>            
           @endif
           @if (Route::has('acara'))
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('acara') }}">{{ __('Acara') }}</a>
+            <a class="nav-link text-white" href="{{ route('acara') }}">{{ __('Acara') }}</a>
           </li>            
           @endif
           @if (Route::has('panduan'))
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('panduan') }}">{{ __('Panduan') }}</a>
+            <a class="nav-link text-white" href="{{ route('panduan') }}">{{ __('Panduan') }}</a>
           </li>            
           @endif
           @if (Route::has('#'))
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('#') }}">{{ __('Peta Digital') }}</a>
+            <a class="nav-link text-white" href="{{ route('#') }}">{{ __('Peta Digital') }}</a>
           </li>            
           @endif
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-dark" type="submit">Search</button>
+          <button class="btn btn-outline-light" type="submit">Search</button>
         </form>
       </div>
     </div>
   </nav>
   
-  <main class="">
-    @yield('content')
-  </main>
+   <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{ asset('frontend/img/banner.png') }}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+       <div class="caption-content">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+       </div>
+     </div>
+     </div>
+  </div>
+
+   <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{ asset('frontend/img/SelamatDatangDiKotabaru.png') }}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+     </div>
+     </div>
+  </div>
+
+   <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{ asset('frontend/img/gambar2.png') }}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+     </div>
+     </div>
+  </div>
+
+   <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{ asset('frontend/img/sebelumFooter.png') }}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+     </div>
+     </div>
+  </div>
 
   <main class="bg-warning">
-    @yield('footer')
 
     <div class="container">
       <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 py-5 my-5 border-top">

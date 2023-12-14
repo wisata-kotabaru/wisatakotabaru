@@ -17,6 +17,7 @@
           <th scope="col">Title</th>
           <th scope="col">Lokasi</th>
           <th scope="col">Foto</th>
+          <th scope="col">Deskripsi</th>
           <th scope="col">Dibuat</th>
           <th scope="col">Aksi</th>
         </tr>
@@ -32,8 +33,8 @@
          <td>{{ $row->lokasi }}</td>
          <td>
           <img src="{{ \Storage::url($row->foto) }}" alt="foto" width="50px">
-          {{-- {{ $row->foto }} --}}
          </td>
+         <td>{{ $row->kontenKuliner }}</td>
          <td>{{ $row->created_at }}</td>
          <td>
            <a href="{{ route('tampilKuliner', ['id' => $row->id]) }}" class="btn btn-info">Edit</a>

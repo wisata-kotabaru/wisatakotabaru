@@ -8,14 +8,22 @@
     opacity: 1; /* Menampilkan elemen saat dihover */
 }
 
-/* Tambahkan di CSS Anda */
-/* .card {
-    transition: transform 0.3s ease-in-out;
+/* Card */
+.card {
+    /* transition: transform 0.3s ease-in-out; */
+    height: 100%;
 }
 
-.card:hover {
+.custom-card-img {
+    height: 200px; /* Set your desired height */
+    object-fit: cover; /* This property ensures that the image covers the entire container, preserving its aspect ratio */
+}
+
+/* .card:hover {
     transform: scale(1.05);
 } */
+
+/* End Card */
 
 .custom-link {
     text-decoration: none;
@@ -35,9 +43,4 @@ body {
 
 main {
     flex: 1;
-}
-
-.custom-card-img {
-    height: 200px; /* Set your desired height */
-    object-fit: cover; /* This property ensures that the image covers the entire container, preserving its aspect ratio */
 }

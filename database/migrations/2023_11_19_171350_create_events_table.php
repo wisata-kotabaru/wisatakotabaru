@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('title');
             $table->string('lokasi');
             $table->string('foto');
+            $table->text('kontenAcara');
+            $table->date('tanggal_mulai');
+            $table->date('tanggal_berakhir');
             $table->timestamps();
         });
     }

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('lokasi');
             $table->string('foto');
+            $table->text('kontenKuliner');
             $table->timestamps();
         });
     }

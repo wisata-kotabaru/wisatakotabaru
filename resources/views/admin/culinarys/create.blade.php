@@ -24,6 +24,10 @@
             <label for="foto" class="form-label">Tambahkan Foto</label>
             <input type="file" class="form-control" name="foto" id="foto" aria-describedby="emailHelp">
           </div>
+          <div class="mb-3">
+            <label for="kontenKuliner" class="form-label">Deskripsi</label>
+            <textarea class="form-control" id="kontenKuliner" name="kontenKuliner" rows="3"></textarea>
+          </div>
           <button type="submit" class="btn btn-primary">Submit</button>
 
         </form>
