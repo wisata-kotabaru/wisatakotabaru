@@ -69,5 +69,5 @@ Route::get('/detailKuliner', [CulinaryController::class, 'detailKuliner'])->name
 
 // Acara
 Route::get('/acara', [EventController::class, 'index'])->name('acara');
-Route::get('/detailAcara', [EventController::class, 'detailAcara'])->name('detailAcara');
+Route::get('/detailAcara/{id}', [EventController::class, 'detailAcara'])->name('detailAcara');
 require __dir__."/auth.php";

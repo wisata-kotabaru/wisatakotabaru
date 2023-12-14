@@ -3,7 +3,7 @@
 @section('content')
  <div class="carousel-inner">
    <div class="carousel-item active">
-     <img src="{{ asset('frontend/img/carrousel.png') }}" class="d-block w-100" alt="...">
+     <img src="{{ asset('frontend/img/banner.png') }}" class="d-block w-100 custom-card-img" alt="...">
      <div class="carousel-caption d-none d-md-block">
       <div class="caption-content">
        <h5>First slide label</h5>

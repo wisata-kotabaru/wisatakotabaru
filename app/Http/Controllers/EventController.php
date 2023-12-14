@@ -64,7 +64,9 @@ class EventController extends Controller
         //
     }
 
-    public function detailAcara(){
-        return view('frontend.acara.detailAcara');
+    public function detailAcara($id){
+
+        $data = Event::find($id); 
+        return view('frontend.acara.detailAcara', ['data' => $data]);
     }
 }

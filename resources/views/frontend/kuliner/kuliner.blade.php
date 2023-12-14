@@ -3,7 +3,7 @@
 @section('content')
  <div class="carousel-inner">
    <div class="carousel-item active">
-     <img src="{{ asset('frontend/img/carrousel.png') }}" class="d-block w-100" alt="...">
+     <img src="{{ asset('frontend/img/kuliner.png') }}" class="d-block w-100 custom-card-img" alt="...">
      <div class="carousel-caption d-none d-md-block">
       <div class="caption-content">
        <h5>First slide label</h5>
@@ -23,7 +23,7 @@
         <h4 class="card-title">{{ $row->title }}</h4>
         <p class="card-text">{{ $row->lokasi }}</p>
       </div>
-      <a class="btn btn-dark" href="{{ route('detailAkomodasi', ['id' => $row->id]) }}" role="button">SELENGKAPNYA</a>
+      <a class="btn btn-dark" href="{{ route('detailKuliner', ['id' => $row->id]) }}" role="button">SELENGKAPNYA</a>
     </div>    
   </div>
   @endforeach

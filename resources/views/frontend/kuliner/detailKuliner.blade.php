@@ -15,12 +15,12 @@
 
 <div class="card container mt-5">
   <div class="card-header">
-    <h1 class="text-center mt-5">Hotel Grand Surya</h1>
+    <h1 class="text-center mt-5">{{ $data->title }}</h1>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb justify-content-center">
-        <li class="breadcrumb-item"><a href="#" class="link-dark">Home</a></li>
-        <li class="breadcrumb-item"><a href="#" class="link-dark">Library</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Hotel Grand Surya</li>
+        <li class="breadcrumb-item"><a href="{{ route('homepage') }}" class="link-dark">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('kuliner') }}" class="link-dark">Kuliner</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ $data->title }}</li>
       </ol>
     </nav>
   </div>

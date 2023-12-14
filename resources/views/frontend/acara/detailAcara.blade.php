@@ -3,7 +3,7 @@
 @section('content')
 <div class="carousel-inner">
  <div class="carousel-item active">
-   <img src="{{ asset('frontend/img/carrousel.png') }}" class="d-block w-100" alt="...">
+   <img src="{{ \Storage::url($data->foto) }}" class="d-block w-100 custom-card-img" alt="...">
    <div class="carousel-caption d-none d-md-block">
     <div class="caption-content">
      <h5>First slide label</h5>
@@ -15,17 +15,17 @@
 
 <div class="card container mt-5">
   <div class="card-header">
-    <h1 class="text-center mt-5">Hotel Grand Surya</h1>
+    <h1 class="text-center mt-5">{{ $data->title }}</h1>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb justify-content-center">
-        <li class="breadcrumb-item"><a href="#" class="link-dark">Home</a></li>
-        <li class="breadcrumb-item"><a href="#" class="link-dark">Library</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Hotel Grand Surya</li>
+        <li class="breadcrumb-item"><a href="{{ route('homepage') }}" class="link-dark">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('acara') }}" class="link-dark">Acara</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ $data->title }}</li>
       </ol>
     </nav>
   </div>
   <div class="card-body">
-    <img src="{{ asset("frontend/img/carrousel_new.png") }}" class="card-img-top" alt="...">
+    <img src="{{ \Storage::url($data->foto) }}" class="card-img-top rounded" alt="...">
 
     <div class="row justify-content-center">
       <div class="col-md-3">

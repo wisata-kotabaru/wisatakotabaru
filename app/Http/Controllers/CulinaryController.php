@@ -64,8 +64,9 @@ class CulinaryController extends Controller
         //
     }
 
-    public function detailKuliner()
+    public function detailKuliner($id)
     {
-        return view('frontend.kuliner.detailKuliner');
+        $data = Culinary::find($id); 
+        return view('frontend.kuliner.detailKuliner', ['data' => $data]);
     }
 }

@@ -3,7 +3,7 @@
 @section('content')
 <div class="carousel-inner">
  <div class="carousel-item active">
-   <img src="{{ asset('frontend/img/carrousel.png') }}" class="d-block w-100" alt="...">
+   <img src="{{ \Storage::url($data->foto) }}" class="d-block w-100 custom-card-img" alt="...">
    <div class="carousel-caption d-none d-md-block">
     <div class="caption-content">
      <h5>First slide label</h5>
@@ -18,7 +18,7 @@
     <h1 class="text-center mt-5">{{ $data->title }}</h1>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb justify-content-center">
-        <li class="breadcrumb-item"><a href="#" class="link-dark">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('homepage') }}" class="link-dark">Home</a></li>
         <li class="breadcrumb-item"><a href="{{ route('akomodasi') }}" class="link-dark">Akomodasi</a></li>
         <li class="breadcrumb-item active" aria-current="page">{{ $data->title }}</li>
       </ol>

@@ -15,17 +15,17 @@
 
 <div class="card container mt-5">
   <div class="card-header">
-    <h1 class="text-center mt-5">Hotel Grand Surya</h1>
+    <h1 class="text-center mt-5">{{ $data->title }}</h1>
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb justify-content-center">
-        <li class="breadcrumb-item"><a href="#" class="link-dark">Home</a></li>
-        <li class="breadcrumb-item"><a href="#" class="link-dark">Library</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Hotel Grand Surya</li>
+        <li class="breadcrumb-item"><a href="{{ route('homepage') }}" class="link-dark">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('destinasi') }}" class="link-dark">Destinasi</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ $data->title }}</li>
       </ol>
     </nav>
   </div>
   <div class="card-body">
-    <img src="{{ asset("frontend/img/carrousel_new.png") }}" class="card-img-top" alt="...">
+    <img src="{{ \Storage::url($data->foto) }}" class="card-img-top" alt="...">
 
     <div class="row justify-content-center">
       <div class="col-md-3">
