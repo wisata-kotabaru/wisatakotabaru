@@ -12,10 +12,10 @@
   </head>
   <body>
 
-   <nav class="navbar navbar-expand-lg fixed-top">
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="{{ route('homepage') }}">
-       <img src="{{ asset('frontend/img/wonderlandKotabaru.png') }}" alt="Bootstrap" width="120" height="56" class="img-fluid">
+       <img src="{{ asset('frontend/img/wonderlandKotabaru.png') }}" alt="Bootstrap" width="130" height="66" class="img-fluid">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -24,32 +24,32 @@
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           @if (Route::has('destinasi'))
           <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('destinasi') }}">{{ __('Destinasi') }}</a>
+            <a class="nav-link fw-bold text-uppercase" href="{{ route('destinasi') }}">{{ __('Destinasi') }}</a>
           </li>            
           @endif
           @if (Route::has('akomodasi'))
           <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('akomodasi') }}">{{ __('Akomodasi') }}</a>
+            <a class="nav-link fw-bold text-uppercase" href="{{ route('akomodasi') }}">{{ __('Akomodasi') }}</a>
           </li>            
           @endif
           @if (Route::has('kuliner'))
           <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('kuliner') }}">{{ __('Kuliner') }}</a>
+            <a class="nav-link fw-bold text-uppercase" href="{{ route('kuliner') }}">{{ __('Kuliner') }}</a>
           </li>            
           @endif
           @if (Route::has('acara'))
           <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('acara') }}">{{ __('Acara') }}</a>
+            <a class="nav-link fw-bold text-uppercase" href="{{ route('acara') }}">{{ __('Acara') }}</a>
           </li>            
           @endif
           @if (Route::has('panduan'))
           <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('panduan') }}">{{ __('Panduan') }}</a>
+            <a class="nav-link fw-bold text-uppercase" href="{{ route('panduan') }}">{{ __('Panduan') }}</a>
           </li>            
           @endif
           @if (Route::has('#'))
           <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('#') }}">{{ __('Peta Digital') }}</a>
+            <a class="nav-link fw-bold text-uppercase" href="{{ route('#') }}">{{ __('Peta Digital') }}</a>
           </li>            
           @endif
         </ul>

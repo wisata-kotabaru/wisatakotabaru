@@ -52,7 +52,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
 
 
 
-Route::get('/homepage', [HomepageController::class, 'index'])->name('homepage');
+Route::get('/wisatakotabaru', [HomepageController::class, 'index'])->name('homepage');
 
 // Akomodasi
 Route::get('/akomodasi', [AccommodationController::class, 'index'])->name('akomodasi');

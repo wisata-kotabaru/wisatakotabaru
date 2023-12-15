@@ -25,7 +25,8 @@
           </div>
           <div class="mb-3">
             <label for="kontenAkomodasi" class="form-label">Deskripsi</label>
-            <textarea class="form-control" id="kontenAkomodasi" name="kontenAkomodasi" rows="3" value="{{ $data->kontenAkomodasi }}"></textarea>
+            {{-- <textarea class="form-control" id="kontenAkomodasi" name="kontenAkomodasi" rows="3" value="{{ $data->kontenAkomodasi }}"></textarea> --}}
+            <input type="text" class="form-control" name="kontenAkomodasi" id="kontenAkomodasi" aria-describedby="emailHelp" value="{{ $data->kontenAkomodasi }}">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
 
