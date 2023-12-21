@@ -9,7 +9,10 @@
 
     {{-- style --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
 
+
+     @livewireStyles
   </head>
   <body>
 
@@ -43,14 +46,9 @@
             <a class="nav-link fw-bold text-uppercase @if(Route::currentRouteName() == 'acara') active @endif" href="{{ route('acara') }}">{{ __('Acara') }}</a>
           </li>            
           @endif
-          @if (Route::has('panduan'))
+          @if (Route::has('render'))
           <li class="nav-item">
-            <a class="nav-link fw-bold text-uppercase @if(Route::currentRouteName() == 'panduan') active @endif" href="{{ route('panduan') }}">{{ __('Panduan') }}</a>
-          </li>            
-          @endif
-          @if (Route::has('#'))
-          <li class="nav-item">
-            <a class="nav-link fw-bold text-uppercase @if(Route::currentRouteName() == 'destinasi') active @endif" href="{{ route('#') }}">{{ __('Peta Digital') }}</a>
+            <a class="nav-link fw-bold text-uppercase @if(Route::currentRouteName() == 'render') active @endif" href="{{ route('render') }}">{{ __('Peta Digital') }}</a>
           </li>            
           @endif
         </ul>
@@ -64,6 +62,7 @@
   
   <main class="">
     @yield('content')
+    {{ isset($slot) ? $slot : null }}
   </main>
 
   <main class="bg-warning">
@@ -122,5 +121,8 @@
   </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    @livewireScripts
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    @stack('scripts')
   </body>
 </html>
