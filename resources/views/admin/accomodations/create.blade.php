@@ -25,6 +25,22 @@
             <input type="file" class="form-control" name="foto" id="foto" aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
+            <label for="check_in" class="form-label">Check In</label>
+            <input type="text" class="form-control" name="check_in" id="check_in" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="check_out" class="form-label">Check Out</label>
+            <input type="text" class="form-control" name="check_out" id="check_out" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="alamat" class="form-label">Alamat</label>
+            <textarea class="form-control" id="alamat" name="alamat" rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="no_telepon" class="form-label">Nomor Telepon</label>
+            <input type="text" class="form-control" name="no_telepon" id="no_telepon" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
             <label for="kontenAkomodasi" class="form-label">Deskripsi</label>
             <textarea class="form-control" id="kontenAkomodasi" name="kontenAkomodasi" rows="3"></textarea>
           </div>

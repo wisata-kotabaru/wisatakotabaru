@@ -3,13 +3,13 @@
 @section('content')
 <div class="carousel-inner">
  <div class="carousel-item active">
-   <img src="{{ \Storage::url($data->foto) }}" class="d-block w-100 custom-img" alt="...">
+   <img src="{{ asset('frontend/img/destinasi.png') }}" class="d-block w-100 custom-img" alt="...">
   </div>
 </div>
 
 
 <div id="top-of-cards">
-  <div class="container py-3">
+  <div class="container">
     <div class="card mb-3 shadow">
 
       <div class="card-header bg-transparent">

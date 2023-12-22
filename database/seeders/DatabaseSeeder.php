@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             CulinarySeeder::class,
             DestinationSeeder::class,
             EventSeeder::class,
+            LocationSeeder::class,
         ]);
     }
 }

@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('lokasi');
             $table->string('foto');
             $table->text('kontenAkomodasi');
+            $table->string('check_in');
+            $table->string('check_out');
+            $table->text('alamat');
+            $table->string('no_telepon');
             $table->timestamps();
         });
     }

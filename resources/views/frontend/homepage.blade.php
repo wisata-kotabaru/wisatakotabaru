@@ -42,14 +42,9 @@
             <a class="nav-link fw-bold text-uppercase" href="{{ route('acara') }}">{{ __('Acara') }}</a>
           </li>            
           @endif
-          @if (Route::has('panduan'))
+          @if (Route::has('render'))
           <li class="nav-item">
-            <a class="nav-link fw-bold text-uppercase" href="{{ route('panduan') }}">{{ __('Panduan') }}</a>
-          </li>            
-          @endif
-          @if (Route::has('#'))
-          <li class="nav-item">
-            <a class="nav-link fw-bold text-uppercase" href="{{ route('#') }}">{{ __('Peta Digital') }}</a>
+            <a class="nav-link fw-bold text-uppercase @if(Route::currentRouteName() == 'render') active @endif" href="{{ route('render') }}">{{ __('Peta Digital') }}</a>
           </li>            
           @endif
         </ul>
