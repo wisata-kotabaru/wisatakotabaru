@@ -21,45 +21,47 @@
                     Form
                 </div>
                 <div class="card-body">
-
-                    
-
+                    <div class="form-group">
+                        <label for="locationSelect">Pilih Lokasi:</label>
+                        <select wire:model="location" id="locationSelect" class="form-control">
+                            <option value="">Pilih Lokasi</option>
+                            @foreach($locations as $location)
+                                <option value="{{ $location['id'] }}">{{ $location['name'] }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
 
     </div>
 </div>
-    
+
 @endsection
+
 @push('scripts')
 <script>
+    const locations = @json($locations);
 
-        const defaultLocation = [116.22821158372666, -3.235331354898247]
+    mapboxgl.accessToken = '{{ env("MAPBOX_KEY") }}';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/satellite-v9',
+        zoom: 5
+    });
 
-        mapboxgl.accessToken = '{{ env("MAPBOX_KEY") }}';
-        var map = new mapboxgl.Map({
-            container: 'map',
-            center: defaultLocation,
-            zoom: 11.15
-        });
-
-        const style = "satellite-v9"
-        // light-v10, outdoors-v11, satellite-v9, streets-v11, dark-v10
-        map.setStyle(`mapbox://styles/mapbox/${style}`)
-
-        map.addControl(new mapboxgl.NavigationControl())
-
-        map.on('click', (e) => {
-            const longtitude = e.lngLat.lng
-            const lattitude = e.lngLat.lat
-
-            console.log({longtitude, lattitude});
+    locations.forEach(location => {
+        const marker = new mapboxgl.Marker({
+            color: 'red',
         })
+            .setLngLat([location.longitude, location.latitude])
+            .addTo(map);
+    });
 
-    
-    
+    document.querySelector('#locationSelect').addEventListener('change', (event) => {
+        if (event.target.value) {
+            map.setCenter([locations.find(loc => loc.id == event.target.value).longitude, locations.find(loc => loc.id == event.target.value).latitude], 11);
+        }
+    });
 </script>
 @endpush
-
-
