@@ -41,6 +41,10 @@
             <input type="text" class="form-control" name="no_telepon" id="no_telepon" aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
+            <label for="external_link" class="form-label">External Link</label>
+            <input type="text" class="form-control" name="external_link" id="external_link" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
             <label for="kontenAkomodasi" class="form-label">Deskripsi</label>
             <textarea class="form-control" id="kontenAkomodasi" name="kontenAkomodasi" rows="3"></textarea>
           </div>

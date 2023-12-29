@@ -5,6 +5,7 @@ use App\Http\Controllers\CulinaryController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\MapController;
 use App\Http\Controllers\PlanTravelController;
 use App\Livewire\MapLocation;
 use Illuminate\Support\Facades\Route;
@@ -72,5 +73,6 @@ Route::get('/detailKuliner/{id}', [CulinaryController::class, 'detailKuliner'])-
 Route::get('/acara', [EventController::class, 'index'])->name('acara');
 Route::get('/detailAcara/{id}', [EventController::class, 'detailAcara'])->name('detailAcara');
 
-Route::get('/map', [MapLocation::class, 'render'])->name('render');
+// Route::get('/map', [MapLocation::class, 'render'])->name('render');
+Route::get('/map', [MapController::class, 'index'])->name('index');
 require __dir__."/auth.php";

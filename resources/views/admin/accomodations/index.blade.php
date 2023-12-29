@@ -17,6 +17,7 @@
           <th scope="col">Title</th>
           <th scope="col">Lokasi</th>
           <th scope="col">Foto</th>
+          <th scope="col">Eksternal Link</th>
           <th scope="col">Deskripsi</th>
           <th scope="col">Dibuat</th>
           <th scope="col">Aksi</th>
@@ -34,6 +35,7 @@
          <td>
           <img src="{{ \Storage::url($row->foto) }}" alt="foto" width="50px">
          </td>
+         <td>{{ $row->external_link }}</td>
          <td>{{ $row->kontenAkomodasi }}</td>
          <td>{{ $row->created_at }}</td>
          <td>

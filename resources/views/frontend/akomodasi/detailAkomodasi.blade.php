@@ -29,7 +29,7 @@
           </div>
         </div>
         
-        <div class="col-md-4" style="margin-top: 100px;">
+        <div class="col-md-4" style="margin-top: 70px;">
           <h5>Tentang Hotel Ini</h5>
           <ul class="nav flex-column">
             {{-- <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Waktu check in : {{ $data->check_in }} </a></li> --}}
@@ -37,9 +37,10 @@
             <li class="nav-item"><p>Waktu check in : {{ $data->check_in }}</p></li>
             <li class="nav-item"><p>Waktu check out : {{ $data->check_out }}</p></li>
           </ul>
+          <a class="btn btn-dark" href="{{ $data->external_link }}" role="button" target="_blank">SELENGKAPNYA</a>
         </div>
         
-        <div class="col-md-4" style="margin-top: 100px;"">
+        <div class="col-md-4" style="margin-top: 70px;"">
           <h5>Alamat & Informasi Kontak</h5>
           <ul class="nav flex-column">
             <li class="nav-item"><p>{{ $data->alamat }}</p></li>

@@ -24,27 +24,27 @@
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           @if (Route::has('destinasi'))
           <li class="nav-item">
-            <a class="nav-link fw-bold text-uppercase" href="{{ route('destinasi') }}">{{ __('Destinasi') }}</a>
+            <a class="nav-link text-white fw-bold text-uppercase" href="{{ route('destinasi') }}">{{ __('Destinasi') }}</a>
           </li>            
           @endif
           @if (Route::has('akomodasi'))
           <li class="nav-item">
-            <a class="nav-link fw-bold text-uppercase" href="{{ route('akomodasi') }}">{{ __('Akomodasi') }}</a>
+            <a class="nav-link text-white fw-bold text-uppercase" href="{{ route('akomodasi') }}">{{ __('Akomodasi') }}</a>
           </li>            
           @endif
           @if (Route::has('kuliner'))
           <li class="nav-item">
-            <a class="nav-link fw-bold text-uppercase" href="{{ route('kuliner') }}">{{ __('Kuliner') }}</a>
+            <a class="nav-link text-white fw-bold text-uppercase" href="{{ route('kuliner') }}">{{ __('Kuliner') }}</a>
           </li>            
           @endif
           @if (Route::has('acara'))
           <li class="nav-item">
-            <a class="nav-link fw-bold text-uppercase" href="{{ route('acara') }}">{{ __('Acara') }}</a>
+            <a class="nav-link text-white fw-bold text-uppercase" href="{{ route('acara') }}">{{ __('Acara') }}</a>
           </li>            
           @endif
           @if (Route::has('render'))
           <li class="nav-item">
-            <a class="nav-link fw-bold text-uppercase @if(Route::currentRouteName() == 'render') active @endif" href="{{ route('render') }}">{{ __('Peta Digital') }}</a>
+            <a class="nav-link text-white fw-bold text-uppercase @if(Route::currentRouteName() == 'render') active @endif" href="{{ route('render') }}">{{ __('Peta Digital') }}</a>
           </li>            
           @endif
         </ul>
