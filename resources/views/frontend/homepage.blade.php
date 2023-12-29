@@ -42,9 +42,9 @@
             <a class="nav-link fw-bold text-uppercase" href="{{ route('acara') }}">{{ __('Acara') }}</a>
           </li>            
           @endif
-          @if (Route::has('render'))
+          @if (Route::has('index'))
           <li class="nav-item">
-            <a class="nav-link fw-bold text-uppercase @if(Route::currentRouteName() == 'render') active @endif" href="{{ route('render') }}">{{ __('Peta Digital') }}</a>
+            <a class="nav-link fw-bold text-uppercase @if(Route::currentRouteName() == 'index') active @endif" href="{{ route('index') }}">{{ __('Peta Digital') }}</a>
           </li>            
           @endif
         </ul>
