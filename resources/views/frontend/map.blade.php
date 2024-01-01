@@ -103,17 +103,19 @@
 
      /* --------------------------- Initialize Markers --------------------------- */
      function initMarkers() {
-         const initialMarkers = <?php echo json_encode($initialMarkers); ?>;
+          const markersData = <?php echo json_encode($markers); ?>;
 
-         for (let index = 0; index < initialMarkers.length; index++) {
-
-             const data = initialMarkers[index];
-             const marker = generateMarker(data, index);
-             marker.addTo(map).bindPopup(`<b>${data.position.lat},  ${data.position.lng}</b>`);
-             map.panTo(data.position);
-             markers.push(marker)
-         }
-     }
+          for (let index = 0; index < markersData.length; index++) {
+              const data = markersData[index];
+              const marker = generateMarker(data, index);
+              marker.addTo(map).bindPopup(
+                `<b>${data.name}</b><br>
+                <img src="${data.foto}" width="100" alt="testing"><br>
+                <a href="${data.google_maps_link}" target="_blank">Open in Google Maps</a>`);
+              map.panTo(data.position);
+              markers.push(marker);
+          }
+      }
 
      function generateMarker(data, index) {
          return L.marker(data.position, {
@@ -124,22 +126,35 @@
      }
 
      /* ------------------------- Handle Map Click Event ------------------------- */
-     function mapClicked($event) {
-         console.log(map);
-         console.log($event.latlng.lat, $event.latlng.lng);
-     }
+    function mapClicked($event) {
+        console.log('Map Clicked');
+        console.log($event.latlng.lat, $event.latlng.lng);
+    }
 
-     /* ------------------------ Handle Marker Click Event ----------------------- */
-     function markerClicked($event, index) {
-         console.log(map);
-         console.log($event.latlng.lat, $event.latlng.lng);
-     }
+    /* ------------------------ Handle Marker Click Event ----------------------- */
+    function markerClicked($event, index) {
+        console.log('Marker Clicked');
+        console.log($event.latlng.lat, $event.latlng.lng);
 
-     /* ----------------------- Handle Marker DragEnd Event ---------------------- */
-     function markerDragEnd($event, index) {
-         console.log(map);
-         console.log($event.target.getLatLng());
-     }
+        // Access the information of the clicked marker from the markers array
+        const clickedMarkerData = markers[index];
+        console.log('Marker Name:', clickedMarkerData.name);
+        console.log('Marker Photo:', clickedMarkerData.photo);
+        console.log('Google Maps Link:', clickedMarkerData.google_maps_link);
+    }
+
+    /* ----------------------- Handle Marker DragEnd Event ---------------------- */
+    function markerDragEnd($event, index) {
+        console.log('Marker Drag End');
+        console.log($event.target.getLatLng());
+
+        // Access the information of the dragged marker from the markers array
+        const draggedMarkerData = markers[index];
+        console.log('Dragged Marker Name:', draggedMarkerData.name);
+        console.log('Dragged Marker Photo:', draggedMarkerData.photo);
+        console.log('Google Maps Link:', draggedMarkerData.google_maps_link);
+    }
+
  </script>
 
  <main class="bg-warning mt-5">
