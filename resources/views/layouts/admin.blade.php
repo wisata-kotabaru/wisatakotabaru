@@ -167,6 +167,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{ route('adminMap') }}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Map</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 {{-- <a href="{{ asset('AdminLTE-3.2.0/index2.html') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard v2</p>

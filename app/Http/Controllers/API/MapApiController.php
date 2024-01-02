@@ -3,36 +3,29 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\Place;
 use Illuminate\Http\Request;
 
 class MapApiController extends Controller
 {
     public function getMarkers()
     {
-        $initialMarkers = [
-            [
-                'position' => [
-                    'lat' => -3.2357488433391017,
-                    'lng' => 116.22787791051167
-                ],
-                'draggable' => true
-            ],
-            [
-                'position' => [
-                    'lat' => -3.2931962514457176,
-                    'lng' => 116.26622666898716
-                ],
-                'draggable' => false
-            ],
-            [
-                'position' => [
-                    'lat' => -3.243013639895132,
-                    'lng' => 116.26038774349016
-                ],
-                'draggable' => true
-            ]
-        ];
+        $places = Place::all();
 
-        return response()->json(['markers' => $initialMarkers]);
+        $markers = [];
+        foreach ($places as $place) {
+            $markers[] = [
+                'position' => [
+                    'lat' => $place->latitude,
+                    'lng' => $place->longitude,
+                ],
+                'draggable' => true, // Sesuaikan sesuai kebutuhan
+                'name' => $place->name,
+                'foto' => asset($place->foto), // Menggunakan asset() untuk membuat URL gambar
+                'google_maps_link' => $place->google_maps_link,
+            ];
+        }
+
+        return response()->json(['markers' => $markers]);
     }
 }

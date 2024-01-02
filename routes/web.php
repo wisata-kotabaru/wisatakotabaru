@@ -48,6 +48,14 @@ Route::middleware(['auth'])->prefix('admin')->group(function(){
     Route::get('/destinasi/{id}', [\App\Http\Controllers\Admin\DestinationController::class, 'show'])->name('tampilDestinasi');
     Route::post('/updateDestinasi/{id}', [\App\Http\Controllers\Admin\DestinationController::class, 'update'])->name('updateDestinasi');
     Route::get('/deleteDestinasi/{id}', [\App\Http\Controllers\Admin\DestinationController::class, 'destroy'])->name('deleteDestinasi');
+
+    // Route Admin Map
+    Route::get('/map', [\App\Http\Controllers\Admin\MapController::class, 'index'])->name('adminMap');
+    Route::get('/tambahMap', [\App\Http\Controllers\Admin\MapController::class, 'create'])->name('tambahMap');
+    Route::post('/insertMap', [\App\Http\Controllers\Admin\MapController::class, 'store'])->name('insertMap');
+    Route::get('/map/{id}', [\App\Http\Controllers\Admin\MapController::class, 'show'])->name('tampilMap');
+    Route::post('/updateMap/{id}', [\App\Http\Controllers\Admin\MapController::class, 'update'])->name('updateMap');
+    Route::get('/deleteMap/{id}', [\App\Http\Controllers\Admin\MapController::class, 'destroy'])->name('deleteMap');
 });
 
 

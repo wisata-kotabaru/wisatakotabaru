@@ -7,6 +7,11 @@
     <link rel="icon" href="{{ asset('frontend/img/tagline.png') }}" type="image/x-icon">
     <title>Wisata Kotabaru</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    {{-- CSS & Js Stylesheet --}}
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel='stylesheet' href='https://unpkg.com/leaflet@1.8.0/dist/leaflet.css' crossorigin='' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
 
     <style>
         .text-center {
@@ -17,7 +22,7 @@
             height: 400px;
         }
     </style>
-    <link rel='stylesheet' href='https://unpkg.com/leaflet@1.8.0/dist/leaflet.css' crossorigin='' />
+    
 </head>
 
 <body>
@@ -84,17 +89,22 @@
      function initMap() {
          map = L.map('map', {
              center: {
-                 // lat: 28.626137,
-                 // lng: 79.821603,
                  lat: 116.22787791051167,
                  lng: -3.2357488433391017,
              },
-             zoom: 15
+             zoom: 13
          });
 
-         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-             attribution: '© OpenStreetMap'
-         }).addTo(map);
+        //  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        //      attribution: '© OpenStreetMap'
+        //  }).addTo(map);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoicmFpaGFuZmFocmlmaSIsImEiOiJjbHFkcnVlejMwZ2MyMmpwbHRneWY5cm8wIn0.8crnLn_VcVdCZkmW3kKvqw', {
+            attribution: '© Mapbox',
+            id: 'mapbox/satellite-streets-v12',  // Gunakan 'mapbox/satellite-v9' untuk tampilan satelit
+            tileSize: 512,
+            zoomOffset: -1
+        }).addTo(map);
 
          map.on('click', mapClicked);
          initMarkers();
@@ -119,7 +129,7 @@
 
      function generateMarker(data, index) {
          return L.marker(data.position, {
-                 draggable: data.draggable
+                 draggable: false
              })
              .on('click', (event) => markerClicked(event, index))
              .on('dragend', (event) => markerDragEnd(event, index));
@@ -139,7 +149,7 @@
         // Access the information of the clicked marker from the markers array
         const clickedMarkerData = markers[index];
         console.log('Marker Name:', clickedMarkerData.name);
-        console.log('Marker Photo:', clickedMarkerData.photo);
+        console.log('Marker foto:', clickedMarkerData.foto);
         console.log('Google Maps Link:', clickedMarkerData.google_maps_link);
     }
 
@@ -151,7 +161,7 @@
         // Access the information of the dragged marker from the markers array
         const draggedMarkerData = markers[index];
         console.log('Dragged Marker Name:', draggedMarkerData.name);
-        console.log('Dragged Marker Photo:', draggedMarkerData.photo);
+        console.log('Dragged Marker foto:', draggedMarkerData.foto);
         console.log('Google Maps Link:', draggedMarkerData.google_maps_link);
     }
 
@@ -160,6 +170,7 @@
  <main class="bg-warning mt-5">
 
     <div class="container">
+
       <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 py-5 border-top d-flex justify-content-center">
         <div class="col mb-3">
           <img src="{{ asset('frontend/img/tagline.png') }}" alt="" width="120" height="56" class="img-fluid mb-3">
@@ -203,13 +214,12 @@
             <button class="btn btn-dark form-control" type="button">Subscribe</button>
           </form>
         </div>
-
         
-      </footer>
+      </footer>      
 
-      
     </div>
   </main>
+
 </body>
 
 </html>
